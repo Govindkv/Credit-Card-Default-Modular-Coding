@@ -14,7 +14,7 @@ SRC_REPO = "ccdp"
 AUTHOR_EMAIL="Govind26663355@gmail.com"
 
 setuptools.setup(
-    name=REPO_NAME,,
+    name=REPO_NAME,
     version=__version__,
     author= AUTHOR_USER_NAME,
     author_email=AUTHOR_EMAIL,
