@@ -1,5 +1,4 @@
 # Research_Deployment_Practices
-## Credit Card Default Prediction Project on AWS
 
 ## Workflows
 1.Update config.yaml
