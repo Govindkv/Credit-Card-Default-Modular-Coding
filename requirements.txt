@@ -9,4 +9,3 @@ awscli==1.29.14
 ensure==1.0.2
 python-box==6.0.2
 flask==3.0.3
--e .
