@@ -1,17 +1,20 @@
 # Use the official Python image as a base
 FROM python:3.8-slim-buster
 
-# Update package list and install awscli
-RUN apt update -y && apt install awscli -y
+# Set environment variables
+RUN apt update -y && apt install -y awscli
 
-# Set the working directory inside the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the entire project into the working directory
-COPY . /app
+# Copy the requirements file into the container
+COPY requirements.txt /app/
 
 # Install the dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy the rest of the application code
+COPY . /app/
+
 # Run the application
-CMD ["python3", "app.py"]
+CMD ["python", "app.py"]

@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 import os
 from ccdp.pipeline.stage_06_prediction import PredictionPipeline
 from ccdp.constants import MODEL_FILE_PATH, SCALER_PATH
-
+from pathlib import Path
 app = Flask(__name__)
 
 def ensure_artifacts():
