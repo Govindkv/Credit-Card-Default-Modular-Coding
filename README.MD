@@ -43,7 +43,7 @@ Before starting, ensure you have the following:
 7. Add storage if necessary, then click **Next: Add Tags**.
 8. (Optional) Add a tag for easier identification.
 9. Configure security groups:
-    - Add a rule to allow HTTP (port 8080).
+    - Add a rule to allow HTTP (port 80).
     - Add a rule to allow SSH (port 22).
 10. Review and launch the instance.
 11. Download the key pair (.pem file) and keep it secure.
@@ -129,3 +129,41 @@ Before starting, ensure you have the following:
 
 - **SSH Issues**: Ensure that the security group allows SSH access and you’re using the correct `.pem` file.
 - **Application Errors**: Check the log output for any specific error messages, and ensure all dependencies are installed.
+
+## Deploymen_Flow:
+#1. IAM->Add user (ccd_prediction)->Attach policies-(1.AmazonEC2ContainerRegistryFullAccess 2.AmazonEC2FullAccess)
+-> Click ccd_prediction->Security credential->access keys->CLI(Check mark)->next->create access->keys->downloadd csv
+
+#2. ECR->Create repository->copy uri (011528263568.dkr.ecr.us-west-2.amazonaws.com/ccd_prediction)
+
+#3. EC2-> Launch instances->name->ubuntu->keypair->allow http and https->30 gb->view instance->instance id->connect->connect
+
+# Open EC2 and Install docker in EC2 Machine:
+#optinal
+
+sudo apt-get update -y
+
+sudo apt-get upgrade
+
+#required
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+sudo sh get-docker.sh
+
+sudo usermod -aG docker ubuntu
+
+newgrp docker
+
+- Self-hosted-Runner configuration
+
+setup secrets:
+- AWS_ACCESS_KEY_ID
+- AWS_SECRET_ACCESS_KEY
+- AWS_REGION
+- AWS_ECR_LOGIN_URI
+- ECR_REPOSITORY_NAME
+
+- Push main.yaml
+
+
