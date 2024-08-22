@@ -8,7 +8,7 @@ with open("README.md","r", encoding="utf-8") as f:
 __version__ = "0.0.0"
 
 
-REPO_NAME=''
+REPO_NAME='Research_Deployment_Practices'
 AUTHOR_USER_NAME ='Govindkv'
 SRC_REPO = "ccdp"
 AUTHOR_EMAIL='Govind26663355@gmail.com'
