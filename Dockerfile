@@ -2,19 +2,16 @@
 FROM python:3.8-slim-buster
 
 # Set environment variables
-RUN apt update -y && apt install -y awscli
+RUN apt update -y && apt install awscli -y
 
 # Set the working directory
 WORKDIR /app
 
 # Copy the requirements file into the container
-COPY requirements.txt /app/
+COPY . /app
 
 # Install the dependencies
 RUN pip install -r requirements.txt
 
-# Copy the rest of the application code
-COPY . /app/
-
 # Run the application
-CMD ["python", "app.py"]
+CMD ["python3", "app.py"]
