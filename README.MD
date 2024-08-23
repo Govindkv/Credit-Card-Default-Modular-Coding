@@ -150,5 +150,7 @@ Email: Govind26663355@gmail.com
 - ECR_REPOSITORY_NAME
 
 - Push main.yaml
+#post_deployment
+-portmaping(instances->instance_id)->security->security groups->edit_inbounds->custom_tcp & global_host->save_rules
 
 
